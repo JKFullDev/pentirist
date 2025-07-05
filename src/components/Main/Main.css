@@ -1,0 +1,18 @@
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.results-section {
+    margin-bottom: 20px;
+}
+
+.suggestions-section {
+    margin-bottom: 20px;
+}
+
+.pagination-section {
+    text-align: center;
+}

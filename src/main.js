@@ -1,10 +1,11 @@
-import './style.css';
+import "./styles/style.css";
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Main from "./components/Main/Main";
 
 const init = () => {
   document.body.innerHTML += Header();
   document.body.innerHTML += Main();
+
 };
 
 

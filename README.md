@@ -1,27 +1,44 @@
 
 ```
 pentirist
+├─ .env
 ├─ index.html
 ├─ package-lock.json
 ├─ package.json
 ├─ public
 │  └─ vite.svg
+├─ README.md
 └─ src
-   ├─ Components
+   ├─ assets
+   ├─ components
+   │  ├─ Filters
+   │  │  ├─ Filters.css
+   │  │  └─ Filters.js
    │  ├─ Header
    │  │  ├─ Header.css
    │  │  └─ Header.js
-   │  ├─ Main
-   │  │  ├─ Main.css
-   │  │  └─ Main.js
+   │  ├─ ImageCard
+   │  ├─ ImageGrid
+   │  │  ├─ ImageGrid.css
+   │  │  └─ ImageGrid.js
    │  ├─ Nav
    │  │  ├─ Nav.css
    │  │  └─ Nav.js
-   │  └─ Text
-   │     ├─ Text.css
-   │     └─ Text.js
+   │  ├─ Pagination
+   │  │  ├─ Pagination.css
+   │  │  └─ Pagination.js
+   │  ├─ SearchBar
+   │  │  ├─ SearchBar.css
+   │  │  └─ SearchBar.js
+   │  └─ Suggestions
+   │     ├─ Suggestions.css
+   │     └─ Suggestions.js
    ├─ data
+   │  └─ suggestions.js
    ├─ main.js
-   └─ style.css
+   ├─ styles
+   │  └─ style.css
+   └─ utils
+      └─ fecthImage.js
 
 ```

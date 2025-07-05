@@ -1,10 +1,13 @@
 header {
     padding: 20px;
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     gap: 20px;
+    background-color: #d8f0ff;
 }
+
 
 header>img {
     height: 80px;
