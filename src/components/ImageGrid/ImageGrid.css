@@ -18,6 +18,13 @@
 @media (width <=1200px) {
     #photo-container {
         columns: 3 100px;
+        margin: 1.5em;
+        column-gap: 0.8em;
+    }
+
+    #photo-container img {
+
+        margin-bottom: 0.8em;
     }
 }
 
@@ -26,5 +33,11 @@
     #photo-container {
         columns: 2 100px;
         margin: 1em;
+        column-gap: 0.8em;
+    }
+
+    #photo-container img {
+
+        margin-bottom: 0.8em;
     }
 }
