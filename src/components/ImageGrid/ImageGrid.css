@@ -1,6 +1,29 @@
-.grid {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-template-rows: masonry;
+#photo-container {
+    margin: 2em;
+    list-style: none;
+    columns: 5 320px;
+    column-gap: 1.2em;
+}
+
+#photo-container img {
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 1.2em;
+    display: block;
+    border-radius: 20px;
+    outline: 1px solid white;
+    outline-offset: -5px
+}
+
+@media (width <=1200px) {
+    #photo-container {
+        columns: 3 100px;
+    }
+}
+
+
+@media (width <=600px) {
+    #photo-container {
+        columns: 2 100px;
+    }
 }

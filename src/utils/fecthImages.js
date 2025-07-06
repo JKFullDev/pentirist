@@ -1,33 +1,23 @@
-const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY; // la clave que pongas en tu .env
+const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
 
-export const fetchImages = async ({
-    query = 'nature',
-    page = 1,
-    per_page = 20,
-    orientation = 'landscape',
-    color = ''
-} = {}) => {
-    try {
-        const params = new URLSearchParams({
-            query,
-            page,
-            per_page,
-            orientation,
-        });
-        if (color) params.append('color', color);
+const fetchImages = async (keyword, color = "", page = 1) => {
+    let url = `https://api.unsplash.com/search/photos?page=${page}&per_page=20&query=${keyword}&client_id=${ACCESS_KEY}`;
+    if (color) { url += `&color=${color}` };
 
-        const url = `https://api.unsplash.com/search/photos?${params.toString()}&client_id=${ACCESS_KEY}`;
+    color_input.value = "";
 
-        const res = await fetch(url);
 
-        if (!res.ok) throw new Error('Error en la petición a Unsplash');
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Error fetching images");
+    const data = await res.json();
 
-        const data = await res.json();
+    return data.results.map(photo => ({
+        alt: photo.alt_description,
+        photo: photo.urls.regular,
+        original_photo: photo.urls.raw,
+        color: photo.color,
+    }));
 
-        return data.results; // array de imágenes
-
-    } catch (error) {
-        console.error('Fetch error:', error);
-        return [];
-    }
 };
+
+export default fetchImages;

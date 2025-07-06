@@ -1,29 +1,27 @@
 // src/components/ImageGrid/ImageGrid.js
 import "./ImageGrid.css";
-import ImageCard from "../ImageCard/ImageCard.js";
 
-const ImageGrid = (images = []) => {
-  if (images.length === 0) {
-    return `<p class="no-results">No se encontraron imágenes.</p>`;
+const ImageGrid = () => {
+  const ul = document.createElement("ul");
+  ul.id = "photo-container";
+  return ul;
+};
+
+export const renderPhotos = (container, photos) => {
+  container.innerHTML = "";
+  if (photos.length === 0) {
+    container.innerHTML = "<h2 class='error'>Try another word</h2>";
+    return;
   }
-
-  return `
-    <section class="image-grid"><div class="grid">
-  <div class="item" style="block-size: 2em;"></div>
-  <div class="item" style="block-size: 3em;"></div>
-  <div class="item" style="block-size: 1.6em;"></div>
-  <div class="item" style="block-size: 4em;"></div>
-  <div class="item" style="block-size: 2.2em;"></div>
-  <div class="item" style="block-size: 3em;"></div>
-  <div class="item" style="block-size: 4.5em;"></div>
-  <div class="item" style="block-size: 1em;"></div>
-  <div class="item" style="block-size: 3.5em;"></div>
-  <div class="item" style="block-size: 2.8em;"></div>
-</div>
-
-      ${images.map(img => ImageCard(img)).join('')}
-    </section>
-  `;
+  photos.forEach(photo => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <a href="${photo.original_photo}" target="_blank">
+        <img src="${photo.photo}" alt="${photo.alt}" />
+      </a>
+    `;
+    container.appendChild(li);
+  });
 };
 
 export default ImageGrid;

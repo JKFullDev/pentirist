@@ -1,13 +1,24 @@
 import "./Header.css";
-import SearchBar from "../SearchBar/SearchBar";
-import Nav from "../Nav/Nav";
 
-const Header = () => `
-<header>
+const Header = () => {
+    const header = document.createElement("header");
+    header.innerHTML = `
+    <div class="logo">
     <img src="https://seekvectors.com/files/download/pintest-blue-circle-outline-logo-01.png" alt="Pinterest Logo" />
-    ${Nav()}
-    ${SearchBar()}
-</header>
-`;
+    </div>
+    <div class="searchBar">
+    <input id="photo_input" type="text" placeholder="¿Qué estás buscando?" />
+    <select id="color_input">
+      <option value="">Select color</option>
+      <option value="black_and_white">Black and white</option>
+      <option value="orange">Orange</option>
+      <option value="green">Green</option>
+    </select>
+    <button id="search_btn">Search</button>
+    </div>
+    `;
 
-export default Header;
+    return header;
+};
+
+export default Header; 

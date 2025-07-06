@@ -1,14 +1,31 @@
 header {
-    padding: 20px;
+    padding: 20px 50px 20px 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
-    background-color: #d8f0ff;
+    background-color: rgba(48, 52, 54, 0.868);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-
-header>img {
+.logo img {
     height: 80px;
+}
+
+.searchBar {
+    display: flex;
+    gap: 30px;
+}
+
+#photo_input,
+#color_input,
+#search_btn {
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 10px transparent;
 }
