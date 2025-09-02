@@ -33,6 +33,9 @@ header {
 #photo_input,
 #color_input,
 #search_btn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     padding: 10px;
     min-width: 100px;
     border-radius: 10px transparent;
@@ -153,9 +156,10 @@ header {
         gap: 1rem;
         position: absolute;
         top: 0;
+        height: 100vmax;
         right: 0;
         background-color: black;
-        padding: 2rem;
+        padding: 3rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .7)
     }
 
@@ -175,13 +179,13 @@ header {
 
         display: flex;
         flex-wrap: wrap;
-        font-size: xx-small;
+        font-size: x-small;
         padding: 5px;
         max-width: 2em;
     }
 
     #imgNum_input {
-        font-size: xx-small;
+        font-size: x-small;
         padding: 7px;
         max-width: 100%;
         height: 25px;

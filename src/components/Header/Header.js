@@ -10,7 +10,7 @@ const Header = () => {
     <nav class="nav" id="nav">
     <button class="close-menu" id="close"><i class="bi bi-x"></i></button>
     <div class="searchBar">
-    <input id="photo_input" type="text" placeholder="Search" />
+    <input id="photo_input" type="text" placeholder="Capybara..." />
     <select id="color_input">
       <option value="">Color</option>
       <option value="black_and_white">Black and white</option>
