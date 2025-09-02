@@ -5,5 +5,13 @@
 }
 
 body {
-  background-color: #d8f0ff;
+  background-color: black;
+  margin-top: 150px;
+}
+
+
+@media (width <=720px) {
+  body {
+    margin-top: 15vh;
+  }
 }
