@@ -5,7 +5,16 @@ footer {
     justify-content: center;
 }
 
-footer button {
+#prevBtn,
+#nextBtn {
+    margin: 20px 20px 50px 20px;
     padding: 10px;
     min-width: 100px;
+}
+
+
+#prevBtn:hover,
+#nextBtn:hover {
+    background-color: rgb(30, 147, 220);
+    cursor: pointer;
 }

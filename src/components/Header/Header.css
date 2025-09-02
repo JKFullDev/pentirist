@@ -13,6 +13,14 @@ header {
     box-sizing: border-box;
 }
 
+.open-menu {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
 .logo img {
     height: 80px;
 }
@@ -30,6 +38,10 @@ header {
     border-radius: 10px transparent;
 }
 
+#search_btn:hover {
+    background-color: rgb(30, 147, 220);
+    cursor: pointer;
+}
 
 #imgNum_input {
     padding: 10px;
@@ -37,29 +49,27 @@ header {
 }
 
 
-@media (width <=1200px) {}
-
-
-@media (width <=720px) {
-
+@media (width <=1200px) {
     header {
-        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     .logo img {
-        height: 50px;
+        height: 70px;
     }
 
 
     .searchBar {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     #photo_input,
     #color_input,
     #search_btn {
-        font-size: x-small;
+        font-size: small;
         padding: 7px;
         max-width: 50px;
     }
@@ -72,35 +82,108 @@ header {
 }
 
 
-@media (width <540px) {
+@media (width <=720px) {
 
     header {
-        justify-content: space-evenly;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+
+    .searchBar {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    #photo_input,
+    #color_input,
+    #search_btn {
+        font-size: x-small;
+        padding: 7px;
+        max-width: 30px;
+    }
+
+    #imgNum_input {
+        font-size: x-small;
+        padding: 7px;
+        max-width: 40px;
+    }
+}
+
+
+
+@media (width <590px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .open-menu,
+    .close-menu {
+        display: block;
+        border: 0;
+        font-size: 1.50rem;
+        background-color: transparent;
+        color: white;
+    }
+
+    .open-menu:hover,
+    .close-menu:hover {
+        color: rgb(30, 147, 220);
+        cursor: pointer;
     }
 
     .logo img {
         height: 50px;
     }
 
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .7)
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
     .searchBar {
-        display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: end;
     }
 
     #photo_input,
     #color_input,
     #search_btn {
+
+        display: flex;
+        flex-wrap: wrap;
         font-size: xx-small;
         padding: 5px;
-        max-width: 30px;
-        height: 25px;
+        max-width: 2em;
     }
 
     #imgNum_input {
-        font-size: x-small;
+        font-size: xx-small;
         padding: 7px;
-        max-width: 50px;
+        max-width: 100%;
         height: 25px;
     }
 }
