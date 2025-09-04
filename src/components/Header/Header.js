@@ -12,6 +12,12 @@ const Header = () => {
       <button class="close-menu" id="close"><i class="bi bi-x"></i></button>
       <div class="searchBar">
         <input id="photo_input" type="text" placeholder="Something..." />
+        <select id="orientation_input">
+          <option value="">Orientation</option>
+          <option value="landscape">Horizontal</option>
+          <option value="portrait">Vertical</option>
+          <option value="squarish">Cuadrada</option>
+        </select>
         <select id="color_input">
           <option value="">Color</option>
           <option value="black_and_white">Black and white</option>

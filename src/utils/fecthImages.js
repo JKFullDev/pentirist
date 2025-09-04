@@ -2,10 +2,11 @@
 const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
 
 // Función para obtener imágenes desde Unsplash según los filtros
-const fetchImages = async (keyword, color = "", page = 1, per_page = 20) => {
+const fetchImages = async (keyword, color = "", orientation = "", page = 1, per_page = 20) => {
     // Construye la URL de la petición con los parámetros recibidos
     let url = `https://api.unsplash.com/search/photos?page=${page}&per_page=${per_page}&query=${keyword}&client_id=${ACCESS_KEY}`;
     if (color) { url += `&color=${color}` };
+    if (orientation) { url += `&orientation=${orientation}` };
 
     // Realiza la petición a la API
     const res = await fetch(url);

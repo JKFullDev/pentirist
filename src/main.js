@@ -20,6 +20,7 @@ const color_input = document.querySelector("#color_input");
 const prev_btn = document.querySelector("#prevBtn");
 const next_btn = document.querySelector("#nextBtn");
 const imgNum_input = document.querySelector("#imgNum_input"); // Input para imágenes por página
+const orientation_input = document.querySelector("#orientation_input");
 
 let currentPage = 1;      // Página actual
 let currentKeyword = "";  // Palabra clave actual de búsqueda
@@ -29,8 +30,11 @@ const getPhotos = async (keyword, page = 1) => {
   currentPage = page;
   currentKeyword = keyword;
   const color = color_input.value;
-  color_input.value = "";      // Limpia el filtro de color
-  photo_input.value = "";      // Limpia el input de búsqueda
+  const orientation = orientation_input.value;
+  color_input.value = "";
+  orientation_input.value = "";
+
+  photo_input.value = "";
 
   // Obtiene el número de imágenes por página, asegurando que esté entre 10 y 30
   let per_page = parseInt(imgNum_input.value, 10);
@@ -39,7 +43,7 @@ const getPhotos = async (keyword, page = 1) => {
 
   try {
     // Llama a la función que obtiene las imágenes desde la API
-    const photos = await fetchImages(keyword, color, page, per_page);
+    const photos = await fetchImages(keyword, color, orientation, page, per_page);
     // Renderiza las fotos en el grid
     renderPhotos(imageGrid, photos);
     // Actualiza el estado de los botones de paginación
