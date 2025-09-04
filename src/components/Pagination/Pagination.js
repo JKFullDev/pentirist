@@ -1,5 +1,6 @@
 import "./Pagination.css";
 
+// Componente Pagination: crea los botones de paginación
 const Pagination = () => {
   const footer = document.createElement("footer");
   footer.innerHTML = `
@@ -8,4 +9,5 @@ const Pagination = () => {
   `;
   return footer;
 };
+
 export default Pagination;

@@ -179,7 +179,6 @@ header {
     #photo_input,
     #color_input,
     #search_btn {
-
         display: flex;
         flex-wrap: wrap;
         font-size: x-small;

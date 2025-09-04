@@ -18,3 +18,8 @@ footer {
     background-color: rgb(30, 147, 220);
     cursor: pointer;
 }
+
+/* Clase para ocultar boton de anterior y siguiente página cuando no se encuentran resultados */
+.hide-pagination {
+    display: none !important;
+}
